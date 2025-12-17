@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Page metadata + stylesheet -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Bookstore</title>
+
+    <!-- Keep styles separate so HTML stays review-friendly -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+    HEADER: top bar including brand and in-page navigation
+    ========================= -->
+    <header class="site-header">
+      <div class="container">
+        <div class="header-row">
+          <!-- Brand area -->
+          <div class="brand" aria-label="Online bookstore branding">
+            <div class="logo" aria-hidden="true"></div>
+            <div>
+              <h1>Online Bookstore</h1>
+              <p class="muted">
+                Books, collections, and categories
+              </p>
+            </div>
+          </div>
+
+          <!-- In-page navigation area -->
+          <nav class="site-nav" aria-label="Main navigation">
+            <ul class="nav-list">
+              <li class="nav-item"><a href="#featured">Featured</a></li>
+              <li class="nav-item"><a href="#categories">Categories</a></li>
+              <li class="nav-item"><a href="#about">About</a></li>
+              <li class="nav-item"><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================
+    MAIN: main content area
+    ========================= -->
+    <main>
+      <div class="container">
+        <div class="grid">
+          <!-- Featured collections section -->
+          <section id="featured" class="card">
+            <h2>Featured Picks</h2>
+            <p class="muted">
+              Explore a few popular selections and featured collections.
+            </p>
+
+            <!-- Product cards -->
+            <ul class="book-list">
+              <li class="book">
+                <!-- Book cover placeholder image-->
+                <img
+                  src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27900%27%20height%3D%27450%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20stop-color%3D%27%238ab4ff%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23121a33%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url(%23g)%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2754%25%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20fill%3D%27%23e8ecff%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2736%27%3EStaff%20Picks%3C/text%3E%3C/svg%3E"
+                  alt="Cover art placeholder for Staff Picks"
+                />
+                <div class="book-body">
+                  <h3>Staff Picks</h3>
+                  <p class="muted">
+                    Recommended titles chosen by our team.
+                  </p>
+                </div>
+              </li>
+
+              <li class="book">
+                <img
+                  src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27900%27%20height%3D%27450%27%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27%23121a33%27/%3E%3Ccircle%20cx%3D%27300%27%20cy%3D%27225%27%20r%3D%27170%27%20fill%3D%27rgba(138%2C180%2C255%2C0.35)%27/%3E%3Ccircle%20cx%3D%27550%27%20cy%3D%27225%27%20r%3D%27170%27%20fill%3D%27rgba(255%2C255%2C255%2C0.12)%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2754%25%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20fill%3D%27%23e8ecff%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2736%27%3ENew%20Arrivals%3C/text%3E%3C/svg%3E"
+                  alt="Cover art placeholder for New Arrivals"
+                />
+                <div class="book-body">
+                  <h3>New Arrivals</h3>
+                  <p class="muted">
+                    Recently added books across a range of genres.
+                  </p>
+                </div>
+              </li>
+
+              <li class="book">
+                <img
+                  src="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27900%27%20height%3D%27450%27%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27%230b1020%27/%3E%3Cpath%20d%3D%27M0%2C320%20C220%2C260%20340%2C380%20540%2C320%20C700%2C275%20820%2C330%20900%2C295%20L900%2C450%20L0%2C450%20Z%27%20fill%3D%27rgba(138%2C180%2C255%2C0.30)%27/%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2754%25%27%20dominant-baseline%3D%27middle%27%20text-anchor%3D%27middle%27%20fill%3D%27%23e8ecff%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2736%27%3EBestsellers%3C/text%3E%3C/svg%3E"
+                  alt="Cover art placeholder for Bestsellers"
+                />
+                <div class="book-body">
+                  <h3>Bestsellers</h3>
+                  <p class="muted">
+                    Popular titles that readers are buying right now.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Categories list section -->
+          <section id="categories" class="card">
+            <h2>Browse Categories</h2>
+            <p class="muted">
+              Find books by category.
+            </p>
+
+            <ul>
+              <li>Fiction</li>
+              <li>Non-fiction</li>
+              <li>Mystery</li>
+              <li>Romance</li>
+              <li>Science &amp; Technology</li>
+              <li>Children’s Books</li>
+            </ul>
+
+            <!-- Small helper note for reviewers/users -->
+            <p class="fine-print">
+              Tip: Use the navigation links in the header to jump to sections on
+              this page.
+            </p>
+          </section>
+        </div>
+
+        <div class="grid">
+          <section id="about" class="card">
+            <h2>About This Store</h2>
+            <p>
+              Learn more about our store, what we offer, and how to get in touch.
+            </p>
+            <p class="muted">
+              This page presents a simple storefront layout with featured items,
+              categories, and basic store information.
+            </p>
+          </section>
+
+          <section id="contact" class="card">
+            <h2>Contact</h2>
+            <p class="muted">
+              Questions or feedback? Reach out using the details below.
+            </p>
+            <ul>
+              <li>
+                Email:
+                <a href="mailto:fake@bookstore.com">fake@bookstore.com</a
+                >
+              </li>
+              <li>Phone: (123) 456-7890</li>
+              <li>Location: Remote-first</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- =========================
+    FOOTER: site notes + footer text
+    ========================= -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-row">
+          <div>
+            <p class="fine-print"><strong>Online Bookstore</strong></p>
+            <p class="fine-print">
+              Store information and links for quick access.
+            </p>
+          </div>
+
+          <p class="fine-print">
+            © 2025 Online Bookstore. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
