@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img" aria-label="Bestsellers cover placeholder">
+  <rect width="900" height="450" fill="#0b1020" />
+  <path d="M0,320 C220,260 340,380 540,320 C700,275 820,330 900,295 L900,450 L0,450 Z" fill="#3b82f6" opacity="0.25" />
+  <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="44" fill="#e5e7eb">Bestsellers</text>
+</svg>
+

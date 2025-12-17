@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img" aria-label="New Arrivals cover placeholder">
+  <rect width="900" height="450" fill="#111827" />
+  <circle cx="300" cy="225" r="170" fill="#3b82f6" opacity="0.25" />
+  <circle cx="560" cy="225" r="170" fill="#ffffff" opacity="0.10" />
+  <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="44" fill="#e5e7eb">New Arrivals</text>
+</svg>
+

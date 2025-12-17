@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img" aria-label="Staff Picks cover placeholder">
+  <rect width="900" height="450" fill="#0f172a" />
+  <rect x="60" y="60" width="780" height="330" rx="28" fill="#1f2a44" opacity="0.9" />
+  <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-size="44" fill="#e5e7eb">Staff Picks</text>
+</svg>
+
