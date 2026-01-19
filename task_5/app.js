@@ -1,26 +1,30 @@
-// JSON data structure for books
-const data = {
-    books: [
+// JSON data structure for books (as a JSON string)
+let dataStr = `
+{
+    "books": [
         {
-            title: "The Great Gatsby",
-            author: "F. Scott Fitzgerald",
-            year: 1925,
-            genre: "Fiction"
+            "title": "The Great Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "year": 1925,
+            "genre": "Fiction"
         },
         {
-            title: "To Kill a Mockingbird",
-            author: "Harper Lee",
-            year: 1960,
-            genre: "Fiction"
+            "title": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "year": 1960,
+            "genre": "Fiction"
         },
         {
-            title: "1984",
-            author: "George Orwell",
-            year: 1949,
-            genre: "Dystopian Fiction"
+            "title": "1984",
+            "author": "George Orwell",
+            "year": 1949,
+            "genre": "Dystopian Fiction"
         }
     ]
-};
+}
+`;
+
+let data = JSON.parse(dataStr);
 
 // Display feedback message
 function showFeedback(message, isError = false) {
@@ -134,7 +138,10 @@ function handleUpdate(event) {
     book.author = author;
     book.year = Number.parseInt(year, 10);
     book.genre = genre;
-    
+
+    // Update the JSON string as well
+    dataStr = JSON.stringify(data);
+
     // Re-render table
     renderTable();
     
@@ -162,7 +169,10 @@ function handleRemove(event) {
     data.books = data.books.filter(book => 
         book.title.toLowerCase().trim() !== title.toLowerCase().trim()
     );
-    
+
+    // Update the JSON string as well
+    dataStr = JSON.stringify(data);
+
     if (data.books.length === initialLength) {
         showFeedback(`Book with title "${title}" not found`, true);
         return;
