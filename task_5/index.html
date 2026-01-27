@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,91 +10,125 @@
         tailwind.config = {
             darkMode: 'class',
             theme: {
-                extend: {}
+                extend: {
+                    colors: {
+                        'app-bg': '#0b0c0e',
+                        'app-surface': '#111317',
+                        'app-surface2': '#151820',
+                        'app-text': '#f3f4f6',
+                        'app-muted': '#a1a1aa',
+                        'app-border': '#262a33',
+                    },
+                }
             }
         }
     </script>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen">
-    <div class="container mx-auto px-4 py-8 max-w-6xl">
-        <h1 class="text-3xl font-semibold mb-8 text-gray-50">Book List Manager</h1>
-        
-        <!-- Feedback area for validation messages -->
-        <div id="feedback" class="mb-6"></div>
-        
-        <!-- Books table -->
-        <section class="mb-8">
-            <h2 class="text-xl font-medium mb-4 text-gray-200">Books</h2>
-            <div class="bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
-                <table class="w-full">
-                    <thead class="bg-gray-800 border-b border-gray-700">
-                        <tr>
-                            <th class="px-4 py-3 text-left text-sm font-medium text-gray-300">Title</th>
-                            <th class="px-4 py-3 text-left text-sm font-medium text-gray-300">Author</th>
-                            <th class="px-4 py-3 text-left text-sm font-medium text-gray-300">Year</th>
-                            <th class="px-4 py-3 text-left text-sm font-medium text-gray-300">Genre</th>
-                        </tr>
-                    </thead>
-                    <tbody id="booksTableBody" class="divide-y divide-gray-700">
-                        <!-- Dynamically populated -->
-                    </tbody>
-                </table>
+
+<body class="min-h-screen bg-app-bg font-sans text-app-text antialiased">
+    <header class="sticky top-0 z-10 border-b border-app-border bg-app-surface">
+        <div class="mx-auto w-[92vw] max-w-[1100px] py-3.5">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-2.5" aria-label="Book List Manager branding">
+                    <div class="h-10 w-10 bg-app-text" aria-hidden="true"></div>
+                    <div>
+                        <h1 class="m-0 text-[1.05rem] font-semibold tracking-[0.2px] text-app-text">
+                            Book List Manager
+                        </h1>
+                        <p class="m-0 text-sm text-app-muted">
+                            Manage your list: view, update, remove
+                        </p>
+                    </div>
+                </div>
             </div>
-        </section>
-        
-        <!-- Update book form -->
-        <section class="mb-8">
-            <h2 class="text-xl font-medium mb-4 text-gray-200">Update Book</h2>
-            <div class="bg-gray-800 rounded-lg border border-gray-700 p-6">
-                <form id="updateForm" class="space-y-4">
-                    <div>
-                        <label for="updateTitle" class="block text-sm font-medium mb-2 text-gray-300">Title (to find book)</label>
-                        <input type="text" id="updateTitle" required
-                            class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    </div>
-                    <div>
-                        <label for="updateAuthor" class="block text-sm font-medium mb-2 text-gray-300">New Author</label>
-                        <input type="text" id="updateAuthor" required
-                            class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    </div>
-                    <div>
-                        <label for="updateYear" class="block text-sm font-medium mb-2 text-gray-300">New Year</label>
-                        <input type="number" id="updateYear" required
-                            class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    </div>
-                    <div>
-                        <label for="updateGenre" class="block text-sm font-medium mb-2 text-gray-300">New Genre</label>
-                        <input type="text" id="updateGenre" required
-                            class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    </div>
-                    <button type="submit" 
-                        class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition-colors">
-                        Update Book
-                    </button>
-                </form>
+        </div>
+    </header>
+    <main class="py-6">
+        <div class="mx-auto w-[92vw] max-w-[1100px]">
+
+            <!-- Feedback area for validation messages -->
+            <div id="feedback" class="mb-6"></div>
+
+            <!-- Books table -->
+            <section id="books" class="mb-4 border border-app-border bg-app-surface p-4">
+                <h2 class="mb-2 text-[1.05rem] font-semibold text-app-text">Books</h2>
+                <p class="mb-3 text-sm text-app-muted">Your current collection.</p>
+                <div class="overflow-hidden border border-app-border bg-app-surface">
+                    <table class="w-full">
+                        <thead class="border-b border-app-border bg-app-surface">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-app-muted">Title</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-app-muted">Author</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-app-muted">Year</th>
+                                <th class="px-4 py-3 text-left text-sm font-medium text-app-muted">Genre</th>
+                            </tr>
+                        </thead>
+                        <tbody id="booksTableBody" class="divide-y divide-app-border">
+                            <!-- Dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Update book form -->
+            <div class="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+                <section id="update" class="border border-app-border bg-app-surface p-4">
+                    <h2 class="mb-2 text-[1.05rem] font-semibold text-app-text">Update Book</h2>
+                    <p class="mb-3 text-sm text-app-muted">Find a book by title and update its details.</p>
+                    <form id="updateForm" class="space-y-4">
+                        <div>
+                            <label for="updateTitle" class="mb-2 block text-sm font-medium text-app-muted">Title (to
+                                find book)</label>
+                            <input type="text" id="updateTitle" required
+                                class="w-full border border-app-border bg-app-surface2 px-4 py-2 text-app-text placeholder:text-app-muted focus:outline-none focus:ring-2 focus:ring-white/20">
+                        </div>
+                        <div>
+                            <label for="updateAuthor" class="mb-2 block text-sm font-medium text-app-muted">New
+                                Author</label>
+                            <input type="text" id="updateAuthor" required
+                                class="w-full border border-app-border bg-app-surface2 px-4 py-2 text-app-text placeholder:text-app-muted focus:outline-none focus:ring-2 focus:ring-white/20">
+                        </div>
+                        <div>
+                            <label for="updateYear" class="mb-2 block text-sm font-medium text-app-muted">New
+                                Year</label>
+                            <input type="number" id="updateYear" required
+                                class="w-full border border-app-border bg-app-surface2 px-4 py-2 text-app-text placeholder:text-app-muted focus:outline-none focus:ring-2 focus:ring-white/20">
+                        </div>
+                        <div>
+                            <label for="updateGenre" class="mb-2 block text-sm font-medium text-app-muted">New
+                                Genre</label>
+                            <input type="text" id="updateGenre" required
+                                class="w-full border border-app-border bg-app-surface2 px-4 py-2 text-app-text placeholder:text-app-muted focus:outline-none focus:ring-2 focus:ring-white/20">
+                        </div>
+                        <button type="submit"
+                            class="inline-flex items-center justify-center border border-app-border bg-app-surface2 px-4 py-2 text-sm font-medium text-app-text transition-colors hover:bg-white/5">
+                            Update Book
+                        </button>
+                    </form>
+                </section>
+
+                <!-- Remove book form -->
+                <section id="remove" class="border border-app-border bg-app-surface p-4">
+                    <h2 class="mb-2 text-[1.05rem] font-semibold text-app-text">Remove Book</h2>
+                    <p class="mb-3 text-sm text-app-muted">Remove a book by its exact title.</p>
+                    <form id="removeForm" class="space-y-4">
+                        <div>
+                            <label for="removeTitle" class="mb-2 block text-sm font-medium text-app-muted">Title (to
+                                remove)</label>
+                            <input type="text" id="removeTitle" required
+                                class="w-full border border-app-border bg-app-surface2 px-4 py-2 text-app-text placeholder:text-app-muted focus:outline-none focus:ring-2 focus:ring-white/20">
+                        </div>
+                        <button type="submit"
+                            class="inline-flex items-center justify-center border border-red-700/80 bg-red-900/20 px-4 py-2 text-sm font-medium text-app-text transition-colors hover:bg-red-900/30">
+                            Remove Book
+                        </button>
+                    </form>
+                </section>
             </div>
-        </section>
-        
-        <!-- Remove book form -->
-        <section>
-            <h2 class="text-xl font-medium mb-4 text-gray-200">Remove Book</h2>
-            <div class="bg-gray-800 rounded-lg border border-gray-700 p-6">
-                <form id="removeForm" class="space-y-4">
-                    <div>
-                        <label for="removeTitle" class="block text-sm font-medium mb-2 text-gray-300">Title (to remove)</label>
-                        <input type="text" id="removeTitle" required
-                            class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-100 focus:outline-none focus:ring-2 focus:ring-red-500">
-                    </div>
-                    <button type="submit" 
-                        class="px-6 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md font-medium transition-colors">
-                        Remove Book
-                    </button>
-                </form>
-            </div>
-        </section>
-    </div>
-    
+        </div>
+    </main>
+
     <script src="app.js"></script>
 </body>
-</html>
 
+</html>
